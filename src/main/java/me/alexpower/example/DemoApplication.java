@@ -1,4 +1,4 @@
-package com.example.demo;
+package me.alexpower.example;
 
 import java.util.function.BiFunction;
 
