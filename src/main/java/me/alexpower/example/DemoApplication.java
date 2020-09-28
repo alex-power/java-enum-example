@@ -6,6 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
 
@@ -15,9 +18,8 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(final String... args) throws Exception {
-		
-		Operation.ADD.apply(2, 3);
-
+		int result = Operation.ADD.apply(2, 3);
+		log.info("2 + 3 = {}", result);
 	}
 
 	enum Operation {
