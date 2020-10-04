@@ -10,7 +10,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
 
@@ -30,6 +32,8 @@ public class DemoApplication implements CommandLineRunner {
 		// COMPILE ERROR
 		BiConsumer<String, List<String>> annotations = (@NonNull x, @NonNull y) -> System.out.println(x);
 
+		int result = Operation.ADD.apply(2, 3);
+		log.info("2 + 3 = {}", result);
 	}
 
 	enum Operation {
